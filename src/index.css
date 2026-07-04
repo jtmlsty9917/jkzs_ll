@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== 全局样式 ===== */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #FAFAFA;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  background: #FAFAFA;
+}
+
+/* ===== 滚动条美化 ===== */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+
+/* ===== 点击缩放反馈 ===== */
+.tap-active:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* ===== 弹窗弹出动画 ===== */
+@keyframes pop-in {
+  0%   { transform: scale(0.3); opacity: 0; }
+  60%  { transform: scale(1.08); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop-in {
+  animation: pop-in 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ===== 淡入上移 ===== */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.3s ease-out;
+}
+
+/* ================================================================
+   🐶 懒懒 — 视频版动画
+   点击弹跳（皮克斯风格压扁&回弹）
+   ================================================================ */
+
+/* --- 弹跳（点击触发）--- */
+@keyframes lazy-bounce-keyframes {
+  0%   { transform: translateY(0) scaleY(1) scaleX(1); }
+  12%  { transform: translateY(-28px) scaleY(0.88) scaleX(1.12); }  /* 拉伸起跳 */
+  25%  { transform: translateY(-35px) scaleY(1.1) scaleX(0.92); }   /* 空中收缩 */
+  40%  { transform: translateY(-32px) scaleY(1.05) scaleX(0.96); }
+  55%  { transform: translateY(0) scaleY(0.82) scaleX(1.18); }      /* 落地压扁 */
+  68%  { transform: translateY(-12px) scaleY(1.06) scaleX(0.95); }  /* 反弹 */
+  80%  { transform: translateY(0) scaleY(0.94) scaleX(1.04); }
+  90%  { transform: translateY(-4px) scaleY(1.02) scaleX(0.98); }
+  100% { transform: translateY(0) scaleY(1) scaleX(1); }
+}
+.lazy-bounce {
+  animation: lazy-bounce-keyframes 0.7s cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+/* ===== 日历热力图背景色 ===== */
+.heat-0 { background-color: #F5F5F5; }
+/* 日历热力图：白色 → 参考蓝 #1C74B3 */
+.heat-1 { background-color: #D1E4F3; }
+.heat-2 { background-color: #A2C7E7; }
+.heat-3 { background-color: #74ABDA; }
+.heat-4 { background-color: #458FCE; }
+.heat-5 { background-color: #1C74B3; }
+
+/* ===== 懒懒周围浮动装饰动画 ===== */
+@keyframes float-sparkle {
+  0%   { opacity: 0; transform: translateY(0) scale(0.6) rotate(0deg); }
+  30%  { opacity: 0.7; transform: translateY(-10px) scale(1) rotate(10deg); }
+  70%  { opacity: 0.5; transform: translateY(-18px) scale(0.9) rotate(-5deg); }
+  100% { opacity: 0; transform: translateY(-25px) scale(0.5) rotate(0deg); }
+}
+
+@keyframes float-dot {
+  0%   { opacity: 0; transform: translateY(0) translateX(0); }
+  40%  { opacity: 0.6; transform: translateY(-12px) translateX(6px); }
+  80%  { opacity: 0.3; transform: translateY(-22px) translateX(-4px); }
+  100% { opacity: 0; transform: translateY(-30px) translateX(0); }
+}
