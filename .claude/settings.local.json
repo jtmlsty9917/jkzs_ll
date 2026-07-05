@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "anthropic-agent-skills": {
+      "source": "directory",
+      "path": "D:\\vibecoding\\skills-main\\skills-main"
+    }
+  },
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": true,
+    "document-skills@anthropic-agent-skills": true,
+    "claude-api@anthropic-agent-skills": true
+  }
+}
