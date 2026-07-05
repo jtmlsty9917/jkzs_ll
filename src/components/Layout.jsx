@@ -1,10 +1,10 @@
 import { NavLink, Outlet } from 'react-router-dom'
 
 const tabs = [
-  { path: '/',          icon: '/logos/nav-smile.png', label: '首页',   color: '#5B9BD5' },
-  { path: '/water',     icon: '/logos/nav-lie.png',   label: '喝水',   color: '#5B9BD5' },
-  { path: '/calendar',  icon: '/logos/nav-run.png',   label: '日历',   color: '#E91E63' },
-  { path: '/todo',      icon: '/logos/nav-wave.png',  label: '待办',   color: '#FF9800' },
+  { path: '/',          icon: import.meta.env.BASE_URL + 'logos/nav-smile.png', label: '首页',   color: '#5B9BD5' },
+  { path: '/water',     icon: import.meta.env.BASE_URL + 'logos/nav-lie.png',   label: '喝水',   color: '#5B9BD5' },
+  { path: '/calendar',  icon: import.meta.env.BASE_URL + 'logos/nav-run.png',   label: '日历',   color: '#E91E63' },
+  { path: '/todo',      icon: import.meta.env.BASE_URL + 'logos/nav-wave.png',  label: '待办',   color: '#FF9800' },
 ]
 
 export default function Layout() {

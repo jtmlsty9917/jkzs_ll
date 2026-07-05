@@ -88,7 +88,7 @@ export default function Mascot({ mood = 50, onInteract }) {
         {/* 透明 WebM — 原生 alpha 通道，无需 Canvas */}
         <video
           ref={videoRef}
-          src="/videos/lazy-transparent.webm"
+          src={import.meta.env.BASE_URL + 'videos/lazy-transparent.webm'}
           muted
           playsInline
           loop
